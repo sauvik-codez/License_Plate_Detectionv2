@@ -1,26 +1,43 @@
 # 🚗 License Plate Detection v2
 
-A computer vision project for **automatic license plate detection and recognition** using deep learning and OCR techniques. This system detects license plates from images/videos and extracts the text efficiently.
+![Python](https://img.shields.io/badge/Python-3.x-blue)
+![OpenCV](https://img.shields.io/badge/OpenCV-ComputerVision-green)
+![Status](https://img.shields.io/badge/Status-Active-success)
+![License](https://img.shields.io/badge/License-MIT-yellow)
+
+An AI-powered project for **detecting vehicle license plates and extracting text** using computer vision and OCR techniques.
 
 ---
 
-## 📌 Features
+## 🎯 Overview
 
-- 🔍 Detects license plates in images and videos  
-- 🧠 Extracts text using OCR  
-- 🎥 Supports both image and video input  
-- ⚡ Fast and efficient pipeline  
-- 🧩 Modular design (Detection → Cropping → Recognition)
+This project implements an **Automatic License Plate Recognition (ALPR)** system that:
+
+- Detects license plates from images
+- Extracts text using OCR
+- Outputs results with bounding boxes and plate numbers
+
+Such systems typically combine **object detection + OCR pipelines** for full automation :contentReference[oaicite:0]{index=0}
+
+---
+
+## ✨ Features
+
+- 🔍 License plate detection from images  
+- 🧠 Text extraction using OCR  
+- 📦 Bounding box visualization  
+- ⚡ Efficient and simple pipeline  
+- 🧩 Easy to modify and extend  
 
 ---
 
 ## 🛠️ Tech Stack
 
-- Python  
-- OpenCV  
-- NumPy  
-- YOLO / CNN (for detection)  
-- Tesseract / EasyOCR (for text recognition)
+- **Python**
+- **OpenCV**
+- **NumPy**
+- **OCR:** Tesseract / EasyOCR  
+- **Model:** Haar Cascade / Deep Learning (if used)
 
 ---
 
@@ -28,33 +45,33 @@ A computer vision project for **automatic license plate detection and recognitio
 
 ```
 License_Plate_Detectionv2/
-│── data/                # Input images/videos
-│── models/              # Trained models
-│── output/              # Output results
-│── utils/               # Helper scripts
-│── main.py              # Main file
+│── images/              # Input images
+│── output/              # Results
+│── models/              # Detection models
+│── main.py              # Main script
+│── utils.py             # Helper functions
 │── requirements.txt     # Dependencies
-│── README.md            # Documentation
+│── README.md
 ```
 
 ---
 
 ## ⚙️ Installation
 
-### 1. Clone the repository
+### 1️⃣ Clone Repository
 ```bash
-git clone https://github.com/Arnab325/License_Plate_Detectionv2.git
+git clone https://github.com/sauvik-codez/License_Plate_Detectionv2.git
 cd License_Plate_Detectionv2
 ```
 
-### 2. Create a virtual environment (optional)
+### 2️⃣ Create Virtual Environment (optional)
 ```bash
 python -m venv venv
 source venv/bin/activate     # Mac/Linux
 venv\Scripts\activate        # Windows
 ```
 
-### 3. Install dependencies
+### 3️⃣ Install Dependencies
 ```bash
 pip install -r requirements.txt
 ```
@@ -63,47 +80,59 @@ pip install -r requirements.txt
 
 ## ▶️ Usage
 
-### Run on Image
+### Run the Project
 ```bash
-python main.py --image path/to/image.jpg
+python main.py
 ```
 
-### Run on Video
-```bash
-python main.py --video path/to/video.mp4
+### Steps:
+1. Load input image  
+2. Detect license plate  
+3. Draw bounding box  
+4. Extract plate region  
+5. Apply OCR  
+6. Display result  
+
+---
+
+## 📊 Example Output
+
+```
+Detected Plate: MH12AB1234
+Confidence: 90%
 ```
 
 ---
 
-## 📊 Output
+## 🖼️ Demo
 
-- Processed images/videos will be saved in the `output/` folder  
-- Detected license plate text will be displayed in the console  
+> Add screenshots here for better presentation
 
-Example:
-```
-Detected Plate: MH12AB1234
-Confidence: 92%
+```markdown
+![Result](output/sample_output.png)
 ```
 
 ---
 
 ## 🔄 Workflow
 
-1. Input image/video  
-2. Detect license plate  
-3. Crop detected region  
-4. Apply OCR  
-5. Display and save results  
+```mermaid
+graph LR
+A[Input Image] --> B[Preprocessing]
+B --> C[Plate Detection]
+C --> D[Crop Plate]
+D --> E[OCR]
+E --> F[Output Text]
+```
 
 ---
 
 ## 🚀 Future Improvements
 
-- Improve OCR accuracy with custom models  
-- Real-time webcam support  
-- Web app deployment (Flask/Streamlit)  
-- Multi-country plate recognition  
+- 🔹 Real-time video detection  
+- 🔹 Improve OCR accuracy  
+- 🔹 Train custom deep learning model  
+- 🔹 Deploy as web app (Flask / Streamlit)  
 
 ---
 
@@ -111,10 +140,13 @@ Confidence: 92%
 
 Contributions are welcome!
 
-1. Fork the repository  
-2. Create a new branch  
-3. Make your changes  
-4. Submit a Pull Request  
+```bash
+git checkout -b feature-name
+git commit -m "Added new feature"
+git push origin feature-name
+```
+
+Open a Pull Request 🚀
 
 ---
 
@@ -126,5 +158,11 @@ This project is licensed under the MIT License.
 
 ## 👨‍💻 Author
 
-**Arnab**  
-GitHub: https://github.com/Arnab325
+**Sauvik**  
+🔗 https://github.com/sauvik-codez  
+
+---
+
+## ⭐ Support
+
+If you like this project, give it a ⭐ on GitHub!
